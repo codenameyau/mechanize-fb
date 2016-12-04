@@ -1,21 +1,15 @@
 'use strict';
 
 // Use this to Add Friend requests for any person.
-exports.clickAddFriendRequest = function(options, filterFn) {
+exports.clickAddFriendRequest = function() {
   var selectElements = function(query) {
     return Array.from(document.body.querySelectorAll(query));
   };
 
-  var limit = options.limit;
-  var elements = selectElements('.FriendRequestAdd');
+  var elements = Array.from(document.body.querySelectorAll('.FriendRequestAdd'));
+  var start = 0, stop = 10;
 
-  if (filterFn && typeof filteredElements === 'function') {
-    elements = selectElements.filter(filterFn);
-  }
-
-  for (var i=0; i<elements.length; i++) {
-    if (limit && i > limit) { break; }
-
+  for (var i=start; i<stop; i++) {
     setTimeout(() => {
       elements[i].click();
       selectElements('.uiOverlayFooter .layerCancel').forEach((cancel) => {
