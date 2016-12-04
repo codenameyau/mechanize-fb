@@ -37,8 +37,12 @@ var pruneFn = function(fn) {
   return fnBody;
 };
 
+var immediatelyInvokeFn = function(fn) {
+  return `(function() {${fn}}());`;
+};
+
 var showOneliner = function(fn) {
-  console.log(pruneFn(fn));
+  console.log(immediatelyInvokeFn(pruneFn(fn)));
 };
 
 /***********************************************************
