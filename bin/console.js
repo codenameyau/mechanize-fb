@@ -14,7 +14,12 @@ var functionMap = {
 
   'add-friend': {
     description: 'Clicks the add friend button for requested friends.',
-    fn: friends.clickAddFriendRequest
+    fn: friends.addFriendFromProfile
+  },
+
+  'scroll': {
+    description: 'Scrolls to footer to load all ajax requests.',
+    fn: friends.scrollToFooter
   }
 };
 
