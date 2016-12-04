@@ -1,0 +1,22 @@
+{
+  "name": "mechanize-fb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "mechanize-fb-console": "bin/console.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codenameyau/mechanize-fb.git"
+  },
+  "author": "Jorge Yau <codenameyau@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codenameyau/mechanize-fb/issues"
+  },
+  "homepage": "https://github.com/codenameyau/mechanize-fb#readme"
+}
