@@ -37,8 +37,8 @@ var pruneFn = function(fn) {
   return fnBody;
 };
 
-var immediatelyInvokeFn = function(fn) {
-  return `(function() {${fn}}());`;
+var immediatelyInvokeFn = function(fnBody) {
+  return `(function() {${fnBody.replace(/\n/g, '')}}());`;
 };
 
 var showOneliner = function(fn) {
@@ -49,9 +49,16 @@ var showOneliner = function(fn) {
 * MAIN PROGRAM
 ************************************************************/
 var action = process.argv[2];
+var limit = process.argv[3];
 var actionChosen = functionMap[action];
+
 if (!action || !actionChosen) {
   process.exit(showHelp());
 }
+
+// Needs to evaluate.
+var options = {
+  limit: limit ? parseInt(limit, 10) : 0
+};
 
 showOneliner(actionChosen.fn);
