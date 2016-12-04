@@ -10,19 +10,20 @@ exports.scrollToFooter = function() {
 
 
 exports.addFriendFromProfile = function() {
-  var selectElements = function(query) {
-    return Array.from(document.body.querySelectorAll(query));
-  };
-
   var elements = Array.from(document.body.querySelectorAll('.FriendRequestAdd:not(.hidden_elem)'));
-  for (var i=0; i<elements.length; i++) {
+
+  elements.forEach((elemet, i) => {
     setTimeout(() => {
       elements[i].click();
-      selectElements('.uiOverlayFooter .layerCancel').forEach((cancel) => {
-        cancel.click();
-      });
-    }, (200 + 200 * Math.random()) * i);
-  }
+
+      var modalFooter = document.body.querySelector('.uiOverlayFooter');
+      if (modalFooter) {
+        var footerBtns = modalFooter.children;
+        var rightmostBtn = footerBtns.length - 1;
+        footerBtns[rightmostBtn].click();
+      }
+    }, (150 + ~~(300 * Math.random())) * i);
+  });
 };
 
 
