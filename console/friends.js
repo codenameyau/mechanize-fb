@@ -22,7 +22,7 @@ exports.addFriendFromProfile = function() {
         var rightmostBtn = footerBtns.length - 1;
         footerBtns[rightmostBtn].click();
       }
-    }, (150 + ~~(300 * Math.random())) * i);
+    }, (300 + ~~(300 * Math.random())) * i);
   });
 };
 
